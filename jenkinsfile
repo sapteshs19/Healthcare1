@@ -23,23 +23,15 @@ pipeline {
                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/BankingProject/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
                     }
             }
-       stage('Create Docker Image') {
-           steps {
-               sh 'docker build -t sapteshs19/banking-project:latest .'
-                    }
+       stage('Docker Build & Push') {
+            steps {
+                script {
+                    sh 'docker build -t sapteshs19/:latest .'
+                    sh 'docker login -u sapteshs19 -p Iamsaptesh@123'
+                    sh 'docker push sapteshs19/banking-project:latest'
                 }
-       stage('Docker-Login') {
-           steps {
-               withCredentials([usernamePassword(credentialsId: 'Docker-login', passwordVariable: 'dockerpassword', usernameVariable: 'dockerlogin')]) { 
-               sh 'docker login -u sapteshs19 -p Iamsaptesh@123'
-                                   }
-                        }
-                }
-       stage('Push-Image') {
-           steps {
-               sh 'docker push sapteshs19/banking-project:latest
-                     }
-                }
+            }
+        }
        stage('Config & Deployment') {
             steps {
                 
