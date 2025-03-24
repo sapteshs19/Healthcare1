@@ -26,7 +26,7 @@ pipeline {
        stage('Docker Build & Push') {
             steps {
                 script {
-                    sh 'docker build -t sapteshs19/:latest .'
+                    sh 'docker build -t sapteshs19/banking-project:latest .'
                     sh 'docker login -u sapteshs19 -p Iamsaptesh@123'
                     sh 'docker push sapteshs19/banking-project:latest'
                 }
