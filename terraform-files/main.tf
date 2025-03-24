@@ -41,7 +41,7 @@ resource "aws_security_group" "test_sg" {
 resource "aws_instance" "test-server" {
   ami                    = "ami-0c1ac8a41498c1a9c"
   instance_type          = "t3.micro"
-  key_name               = "myKey"
+  key_name               = "mykey"
   vpc_security_group_ids = [aws_security_group.test_sg.id]  # 🔹 Use created SG
 
   connection {
