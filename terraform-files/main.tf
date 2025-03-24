@@ -1,6 +1,6 @@
 resource "aws_instance" "test-server" {
   ami = "ami-0c1ac8a41498c1a9c"
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
   key_name = "mykey"
   vpc_security_group_ids = ["sg-04cf4e3801bd09203"]
   connection {
