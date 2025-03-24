@@ -1,10 +1,7 @@
 pipeline {
     agent any
 
-    tools {
-        // Install the Maven version configured as "M3" and add it to the path.
-        maven "M2_HOME"
-    }
+
 
     stages {
         stage('Build') {
@@ -24,7 +21,7 @@ pipeline {
             }
        stage('Create Docker Image') {
            steps {
-               sh 'docker build -t cbabu85/banking-project-demo:3.0 .'
+               sh 'docker build -t sapteshs19/banking-project:latest .'
                     }
                 }
        stage('Docker-Login') {
@@ -36,7 +33,7 @@ pipeline {
                 }
        stage('Push-Image') {
            steps {
-               sh 'docker push cbabu85/banking-project-demo:3.0'
+               sh 'docker push sapteshs19/banking-project:latest
                      }
                 }
        stage('Config & Deployment') {
