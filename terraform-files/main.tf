@@ -4,7 +4,7 @@ provider "aws" {
 
 # 🔹 Create a Security Group
 resource "aws_security_group" "test_sg" {
-  name        = "test-security-group1"
+  name        = "test-security-group2"
   description = "Allow SSH and HTTP traffic"
   vpc_id      = "vpc-04559e4b5e086e135"
 
