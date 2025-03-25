@@ -64,6 +64,6 @@ resource "aws_instance" "test-server" {
   }
 
  #provisioner "local-exec" {
-    #command = "ansible-playbook /var/lib/jenkins/workspace/BankingProject/terraform-files/ansible-playbook.yml"
+    #command = "ansible-playbook /var/lib/jenkins/workspace/Healthcare1/terraform-files/ansible-playbook.yml"
   #}
 }
