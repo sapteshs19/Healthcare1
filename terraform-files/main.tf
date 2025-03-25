@@ -4,7 +4,7 @@ provider "aws" {
 
 # 🔹 Create a Security Group
 resource "aws_security_group" "test_sg" {
-  name        = "test-security-group"
+  name        = "test-security-group1"
   description = "Allow SSH and HTTP traffic"
   vpc_id      = "vpc-04559e4b5e086e135"
 
@@ -40,7 +40,7 @@ resource "aws_security_group" "test_sg" {
 # 🔹 Create EC2 Instance
 resource "aws_instance" "test-server" {
   ami                    = "ami-0c1ac8a41498c1a9c"
-  instance_type          = "t3.micro"
+  instance_type          = "t3.medium"
   key_name               = "new"
   vpc_security_group_ids = [aws_security_group.test_sg.id]  # 🔹 Use created SG
 
