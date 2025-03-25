@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git 'https://github.com/sapteshs19/star-agile-banking-finance.git'
+                git 'https://github.com/sapteshs19/Healthcare1.git'
 
             
 
@@ -26,9 +26,9 @@ pipeline {
        stage('Docker Build & Push') {
             steps {
                 script {
-                    sh 'docker build -t sapteshs19/banking-project:latest .'
+                    sh 'docker build -t sapteshs19/healthcare:latest .'
                     sh 'docker login -u sapteshs19 -p Iamsaptesh@123'
-                    sh 'docker push sapteshs19/banking-project:latest'
+                    sh 'docker push sapteshs19/healthcare:latest'
                 }
             }
         }
