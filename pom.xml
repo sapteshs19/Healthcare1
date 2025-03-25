@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.project.staragile</groupId>
-	<artifactId>banking</artifactId>
+	<artifactId>medicure</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>banking</name>
-	<description>Banking Microservice Project for StarAgile DevOps Project</description>
+	<name>medicure</name>
+	<description>Industry ready project on based on Health Care Domain</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
