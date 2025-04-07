@@ -35,7 +35,7 @@ pipeline {
        stage('Deploy to Kubernetes') {
       steps {
         echo 'Deploying the application to Kubernetes'
-        sh 'kubectl apply -f healthcare-project/deployment.yml'
+        sh 'kubectl apply -f healthcare-project/depployment.yml'
       }
     }
   }
